@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>multisearcher</title>
+	</head>
+  <style>
+    .conter {
+      align: center;
+    }
+  </style>
+	<body style="background-color:grey">
+
+<div class="conter">
+<p>What French word would you like to multisearch? Type below, then press enter please.</p>
+<input type="text" id="boxu" autofocus>
+</div>
+		<script>
+document.getElementById("boxu").onkeydown = function(e) {searchy(e)};
+function searchy(e) 
+{
+	if (e.which == 13)
+	{
+  	 var q = document.getElementById("boxu").value;
+	 window.open("http://translate.google.com/translate?hl=en&sl=fr&tl=en&u=http%3A%2F%2Fwww.google.fr%2Fsearch%3Fq%3D" + q + "%26num%3D10%26hl%3Dfr%26site%3Dimghp%26tbm%3Disch%26sout%3D1%26biw%3D1242%26bih%3D640");
+	 window.open("http://fr.forvo.com/word/" + q + "/#fr");
+	 window.open("http://www.linguee.com/english-french/search?source=french&query=" + q);
+	 window.open("http://translate.google.com/translate?sl=fr&tl=en&prev=_t&hl=en&ie=UTF-8&eotf=1&u=http://fr.wiktionary.org/wiki/" + q + "&act=url");	 	 	 
+	 document.getElementById("boxu").value = "";		
+	}
+}
+		</script>
+	</body>
+</html>
